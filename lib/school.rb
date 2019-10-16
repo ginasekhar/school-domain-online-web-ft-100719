@@ -8,12 +8,13 @@ class School
   end
   
   def add_student(student_name, grade)
-    if @roster.has_key?(grade)
-       @roster[grade] << student_name
-    else 
-      @roster[grade] = []
-      @roster[grade] << student_name
-    end
+    #if !@roster.has_key?(grade)
+     # @roster[grade] = []
+    #end
+    
+    @roster[grade] ||= []
+    @roster[grade] << student_name
+    
   end
   
   def grade(requested_grade)
@@ -22,6 +23,6 @@ class School
   
   def sort 
     @roster.each{ |grade, students| students.sort!}
-      
+    #@roster.map{ |grade, students| students = students.sort}
   end
 end
