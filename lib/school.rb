@@ -23,6 +23,6 @@ class School
   
   def sort 
     #@roster.each{ |grade, students| students.sort!}
-    @roster.map{ |grade, students| students.sort}
+    @roster.transform_values{ |students| students.sort}
   end
 end
